@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Advertise,
+  Banner,
+  Explore,
+  Footer,
+  Hero,
+  Memory,
+  Navbar,
+  Newslatter,
+  Pricing,
+} from "./components";
+import {
+  bannerAPI,
+  brands,
+  footerAPI,
+  hero,
+  memory,
+  navlinks,
+  placesAPI,
+  pricingapi,
+} from "./data/travigodata";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar navlinks={navlinks} />
+      <Hero hero={hero} />
+      <Memory memory={memory} />
+      <Explore placesAPI={placesAPI} title="Explore The Beauty of World" />
+      <Advertise brands={brands} />
+      <Pricing pricingapi={pricingapi} />
+      <Banner bannerAPI={bannerAPI} />
+      <Newslatter />
+      <Footer footerAPI={footerAPI} />
+    </>
   );
-}
+};
 
 export default App;
